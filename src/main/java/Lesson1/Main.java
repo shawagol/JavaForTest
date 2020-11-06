@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         Cat cat1 = new Cat("Barsik", 2, 30);
-        Human human1 = new Human("Robert", 1.5,100 );
+        Human human1 = new Human("Robert", 1.8,100 );
         Robot robot1 = new Robot("R2D2", 0, 1000);
 
         Object[] members = {
@@ -30,32 +30,39 @@ public class Main {
 //        wall1.jump(robot1);
 
         Object[] obstacles = {
-                treadmill1, wall1
+                 wall1,treadmill1
         };
 
         for (int i = 0; i < members.length; i++) {
 
             for (int j = 0; j <obstacles.length ; j++) {
                 if (obstacles[j] instanceof Wall) {
+
                     if (members[i] instanceof Cat) {
-                        ((Wall) obstacles[j]).jump((Cat) members[i]);
+                       if (! ((Wall) obstacles[j]).jump((Cat) members[i]))
+                           break;
                     }
                     if (members[i] instanceof Human) {
-                        ((Wall) obstacles[j]).jump((Human) members[i]);
+                       if (! ((Wall) obstacles[j]).jump((Human) members[i]))
+                           break;
                     }
                     if (members[i] instanceof Robot) {
-                        ((Wall) obstacles[j]).jump((Robot) members[i]);
+                        if (!((Wall) obstacles[j]).jump((Robot) members[i]))
+                            break;
                     }
                 } else {
 
                     if (members[i] instanceof Cat) {
-                        ((Treadmill) obstacles[j]).run((Cat) members[i]);
+                        if (!((Treadmill) obstacles[j]).run((Cat) members[i]))
+                            break;
                     }
                     if (members[i] instanceof Human) {
-                        ((Treadmill) obstacles[j]).run((Human) members[i]);
+                        if (!((Treadmill) obstacles[j]).run((Human) members[i]))
+                            break;
                     }
                     if (members[i] instanceof Robot) {
-                        ((Treadmill) obstacles[j]).run((Robot) members[i]);
+                        if (!((Treadmill) obstacles[j]).run((Robot) members[i]))
+                            break;
                     }
                 }
         }

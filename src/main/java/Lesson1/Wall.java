@@ -10,27 +10,34 @@ public class Wall {
         this.name=name;
         this.heightWall = heightWall;
     }
-    public void jump(Cat cat) {
+    public boolean jump(Cat cat) {
         if (cat.heightJump >= heightWall) {
             System.out.println( cat.name + "- препрыгнул стену " + name );
+            return true;
         } else {
             System.out.println(  cat.name + " - не смог перепрыгнуть стену " + name);
+            return false;
         }
     }
-    public void jump(Human human) {
+    public boolean jump(Human human) {
         if (human.heightJump >= heightWall) {
             System.out.println( human.name + "- препрыгнул стену " + name );
+            return true;
         } else {
             System.out.println(  human.name + " - не смог перепрыгнуть стену " + name);
+            return false;
         }
     }
-    public void jump(Robot robot) {
+    public boolean jump(Robot robot) {
         if (robot.heightJump >= heightWall) {
-            System.out.println( robot.name + "- препрыгнул стену " + name );
+            System.out.println(robot.name + "- препрыгнул стену " + name);
+            return true;
         } else {
-            System.out.println(  robot.name + " - не смог перепрыгнуть стену " + name);
+            System.out.println(robot.name + " - не смог перепрыгнуть стену " + name);
+            return false;
         }
     }
+
 
 
 

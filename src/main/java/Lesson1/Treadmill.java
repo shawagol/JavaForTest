@@ -10,25 +10,31 @@ public class Treadmill{
         this.runLength = runLength;
     }
 
-    public void run(Cat cat) {
+    public boolean run(Cat cat) {
         if (cat.runLength >= runLength) {
             System.out.println( cat.name + "- пробежал по беговой дорожке " + name );
+            return true;
         } else {
             System.out.println(  cat.name + " - не смог пробежать по беговой дорожке " + name);
+            return false;
         }
     }
-    public void run(Human human) {
+    public boolean run(Human human) {
         if (human.runLength >= runLength) {
             System.out.println( human.name + "- пробежал по беговой дорожке " + name );
+            return true;
         } else {
             System.out.println(  human.name + " - не смог пробежать по беговой дорожке " + name);
+            return false;
         }
     }
-    public void run(Robot robot) {
+    public boolean run(Robot robot) {
         if (robot.runLength >= runLength) {
             System.out.println( robot.name + "- пробежал по беговой дорожке " + name );
+            return true;
         } else {
             System.out.println(  robot.name + " - не смог пробежать по беговой дорожке " + name);
+            return false;
         }
     }
 
