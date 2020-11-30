@@ -16,6 +16,6 @@ public class Temperature {
 
 
     public String toString() {
-        return "Минимальная температура:  " + unitType;
+        return "температура:  " + value;
     }
 }
